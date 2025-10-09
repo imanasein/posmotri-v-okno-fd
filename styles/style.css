@@ -54,29 +54,72 @@ ol {
 }
 
 .content {
-    width: 1140px; /* не уверен */
+    width: 1140px; /* задаём ширину */
     display: flex;
-    align-items: flex-end;
-    column-gap: 30px; /* не уверен */ 
+    align-items: flex-end; /* к низу по вертикальной оси */ 
+    gap: 30px; /* задаём отступы между элементами 30px */ 
 }
 
 .search-form {
     display: flex;
-    flex-direction: row;   
-    align-items: flex-start;   /* не уверен но попро */ 
-    justify-content: space-between; /* или 40px * между элементами */  
+    align-items: flex-start;   /* прижать к верхней части по вертикали */ 
+    justify-content: space-between; /* пропорционально распред место между */  
 }
 
 .content__details {
-    width: 100%;
-    height: 100%; /* растянуть на всю ширину и высоту */
+    width: 100%;       /* растянуть на всю доступную ширину */
+    height: 100%;      /* растянуть на всю доступную высоту */
     display: flex;
     flex-direction: column;
-    row-gap: 24px;  /* задаём отступ между заголовком и зоной с карточками */
+    gap: 24px;  /* задаём отступ между заголовком и зоной с карточками */
 }
 
 .content__list-container {
     height: 298px; /* установите жёсткую высоту*/
-    overflow: auto; /* для добавки сролла или overflow: scroll; */
+    overflow: auto; /* при переполнении появится скролл */
 }
 
+.result__video-container {
+    width: 711px;  /*задать размеры видео контейнера */
+    height: 386px;
+    margin-bottom: 16px; /* задали внешний отступ снизу 16px */
+}
+
+.result__video {
+    width: 100%;       /* Без указания высоты и ширины в 100% не растягивается по размерам родителя */
+    height: 100%;
+    object-fit: cover; /* без нарушения пропорций заполнит всю область */
+    object-position: center; /* для расположения видео по центру */
+}
+
+.content__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content__list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content__video-card {
+    display: flex;
+    align-items: flex-start;   /* прижать к верхней части по вертикали */
+}
+
+.content__video-card-thumbnail {
+    height: 103px;          /* задаём высоту по макету */
+    min-width: 194px;       /* задаём мин ширину по макету */
+    object-fit:cover;       /* без нарушения пропорций заполнит всю область */
+    object-position: center; /* для расположения картинки по центру */
+}
+
+.content__video-card {
+    display: flex;
+}
+
+.content__video-card-description-container {
+    flex-grow: 1; /* занимал всё доступное пространство не занятое */
+}
