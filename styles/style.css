@@ -167,6 +167,7 @@ ol {
     display: -webkit-box;
     -webkit-line-clamp: 4; /* Количество строк, после которых текст будет обрезан */
     -webkit-box-orient: vertical;
+    line-clamp: 4;
     overflow: hidden; /* скрывает излишний текст */
     text-overflow: ellipsis; /* добавляет многоточие в конце обрезанного текста. */
 }
@@ -219,7 +220,8 @@ ol {
 }
 
 .search-form__label:has(.search-form__textfield:focus-visible) { 
-   outline: 1px solid #fff; /* Хитрый Селектор  */
+   outline: 1px solid #fff;  /* Хитрый Селектор  */
+   outline-offset: 2px;
 }
 
 .search-form__pseudo-checkbox {
@@ -247,3 +249,50 @@ ol {
     cursor: pointer;
 }
 
+.search-form__label:focus {
+    outline: none; /* Убираем стандартную обводку */
+}
+
+.search-form__label:has(.search-form__checkbox:focus-visible) {
+    outline: 1px solid #fff;
+}
+
+.button  {
+    padding: 6px 0;  /* добавляем внутр отступы сверху и снизу */
+    border: 1px solid #fff;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 122.2%; /* или 22px  */
+    color: #fff;
+    background-color: transparent;
+}
+
+.search-form__submit-button {
+    width: 194px;
+    align-self: flex-end;
+}
+
+.more-button {
+    width: 100%;
+}
+
+.button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: #545050;
+    text-decoration: none;
+}
+
+.button:focus {
+    outline: none; /* Убираем стандартную обводку */
+}
+
+.button:focus-visible {
+    outline: 1px solid #fff;
+    outline-offset: 2px;
+}
