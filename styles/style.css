@@ -76,7 +76,8 @@ ol {
 
 .content__list-container {
     height: 298px; /* установите жёсткую высоту*/
-    overflow: auto; /* при переполнении появится скролл */
+    overflow-x: hidden; /* Скрывает горизонтальный скролл */
+    overflow-y: auto; /* Сохраняет вертикальный скролл */
 }
 
 .result__video-container {
@@ -134,7 +135,7 @@ ol {
     font-style: normal;
     font-weight: 700;
     font-size: 75px;
-    line-height: 94%; /* or 70px */
+    line-height: 94%; /* или 70px */
     text-transform: uppercase;
 }
 
@@ -148,7 +149,7 @@ ol {
 }
 
 .content__video-card-description-container {
-    max-width: 196px; /* ?? пробуем ограничить ширину для обрезки длинных названий городов */
+    max-width: 196px; /* пробуем ограничить ширину для обрезки длинных названий городов */
 }
 
 .content__video-card-title {
@@ -188,13 +189,14 @@ ol {
     display: flex;
     gap: 15px;
 }
+
 .search-form__fieldset {
     border: none; /* сбросили рамку */
 }
 
 .search-form__label {
     display: flex;
-    align-items: center; /*  ??? или внизу по вертикальной оси */
+    align-items: center;
     width: fit-content; /* принять размер содержимого, не растягиваясь на всю доступную ширину */
     gap: 5px;
 }
@@ -227,8 +229,8 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
-    width: 19px; /* или 15px ???? */
-    height: 19px; /* или 15px ???? */
+    width: 19px; /* или 15px */
+    height: 19px; /* или 15px */
     border: 1px solid #fff;
     padding: 1px;
 }
@@ -246,8 +248,12 @@ ol {
     opacity: 1;
 }
 
+.search-form__pseudo-checkbox:hover {
+    cursor: pointer;
+}
+
 .search-form__label:hover .search-form__label-text {
-    text-decoration: underline; /* вроде работает */
+    text-decoration: underline;
     cursor: pointer;
 }
 
@@ -278,7 +284,7 @@ ol {
 
 .more-button {
     width: 100%;
-    padding-left: 3px;  /* как у карточек чтоб границу видно было */
+    padding-left: 3px; /* как у карточек чтоб границу видно было */
     padding-right: 3px;
 }
 
@@ -302,24 +308,20 @@ ol {
 }
 
 .content__list-item {
-    padding:0 3px;
+    padding: 0 3px;
 }
 
 .content__card-link {
-    display: block;  /* для блочного элемента можно добавить фон */
+    display: block; /* для блочного элемента можно добавить фон */
 }
 
-.content__card-link_current {
-    background-color: #545050;
-}
-
+.content__card-link_current,
 .content__card-link:active {
     background-color: #545050;
 }
 
 .content__card-link:hover {
-    text-decoration-line: underline;  /* ??????не увсех видно подчеркивание */
-    /*  text-underline-offset: 1px; */ 
+    text-decoration-line: underline; /*  text-underline-offset: 1px; */
     cursor: pointer;
 }
 
