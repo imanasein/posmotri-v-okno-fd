@@ -54,7 +54,7 @@ ol {
 }
 
 .content {
-    max-width: 1140px; /* задаём ширину */
+    width: 1140px; /* задаём ширину */
     display: flex;
     align-items: flex-end; /* к низу по вертикальной оси */
     gap: 30px; /* задаём отступы между элементами 30px */
